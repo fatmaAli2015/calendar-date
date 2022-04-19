@@ -3,7 +3,7 @@ A web app that references to a particular day represented within some calendar s
 
 
 ## Requirements
- `pip install -r requirements.txt`
+ `pip install -r requirements.txt` to install all libraries
  
 ## Run
  ` python main.py`
