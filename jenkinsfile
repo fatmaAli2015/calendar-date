@@ -10,10 +10,10 @@ pipeline{
         }
         stage("Docker Build"){
             steps{
-                pwsh(script: """
-                 docker images -a
-                 docker build -t pipeline_docker .
-                 docker images -a
+                sh(script: """
+                sudo docker images -a
+                sudo docker build -t pipeline_docker .
+                sudo docker images -a
                  """)
             }
         }
