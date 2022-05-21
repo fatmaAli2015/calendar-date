@@ -10,7 +10,11 @@ pipeline{
         }
         stage("Docker Build"){
             steps{
-                sh(script: docker build -t pipeline_docker .)
+                pwsh(script: """
+                docker images -a
+                 docker build -t pipeline_docker .
+                 docker images -a
+                 """)
             }
         }
         stage("Push COntainer"){
