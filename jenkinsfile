@@ -21,10 +21,12 @@ pipeline{
             steps{
                 echo "Workspace is $WORKSPACE"
                 dir("$WORKSPACE")
-                docker.withRegistry('https:index.docker.io/v1/',
-                 'docker-private-credentials') {
-                     def image= docker.build('06122019/pipeline_docker:latest')
-                     image.push()
+                script{
+                    docker.withRegistry('https:index.docker.io/v1/',
+                    'docker-private-credentials') {
+                        def image= docker.build('06122019/pipeline_docker:latest')
+                        image.push()
+                  }
                 }
             }
         }
