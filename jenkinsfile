@@ -10,11 +10,7 @@ pipeline{
         }
         stage("Docker Build"){
             steps{
-                sh(script: """
-                 docker images -a
-                 docker build -t pipeline_docker .
-                 docker images -a
-                 """)
+                sh 'docker build -t pipeline_docker .'
             }
         }
         stage("Push COntainer"){
